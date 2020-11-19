@@ -7,10 +7,7 @@
       <div>
         <h1 class="title">Choose your dream destination...</h1>
         <div class="links">
-          <a href="#" class="giant-button"> San Francisco, USA </a>
-          <a href="#" class="giant-button"> Québec, Canada </a>
-          <a href="#" class="giant-button"> Bora Bora, Polynésie </a>
-          <a href="#" class="giant-button"> Torres del Paine, Chile </a>
+          <ListDestination />
         </div>
       </div>
     </div>
@@ -18,7 +15,23 @@
 </template>
 
 <script>
-export default {}
+import { mapActions } from 'vuex'
+import ListDestination from '~/components/destination/ListDestination'
+export default {
+  components: { ListDestination },
+  methods: {
+    ...mapActions({
+      loadDestinations: 'destination/loadDestinations',
+      loadDreamDestinations: 'destination/loadDreamDestinations',
+    }),
+  },
+  // eslint-disable-next-line vue/order-in-components
+  mounted() {
+    if (this.$store.state.destination.destinations.length === 0) {
+      this.loadDreamDestinations()
+    }
+  },
+}
 </script>
 
 <style lang="scss">
