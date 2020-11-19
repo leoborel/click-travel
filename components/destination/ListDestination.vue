@@ -21,25 +21,5 @@ export default {
       destinations: 'destination/getDestinations',
     }),
   },
-  // eslint-disable-next-line vue/order-in-components
-  data() {
-    return {
-      dismissSecs: 3,
-      dismissCountDown: 0,
-    }
-  },
-  watch: {
-    totalPrice() {
-      this.showAlert()
-    },
-  },
-  methods: {
-    countDownChanged(dismissCountDown) {
-      this.dismissCountDown = dismissCountDown
-    },
-    showAlert() {
-      this.dismissCountDown = this.dismissSecs
-    },
-  },
 }
 </script>
