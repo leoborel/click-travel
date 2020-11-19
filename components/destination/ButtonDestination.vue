@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink class="giant-button" :to="`/ticket/${destination.code}`">
+  <NuxtLink class="giant-button" :to="`/tickets/${destination.code}`">
     {{ destination.name }}
   </NuxtLink>
 </template>

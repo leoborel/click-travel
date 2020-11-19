@@ -26,9 +26,7 @@ export default {
   },
   // eslint-disable-next-line vue/order-in-components
   mounted() {
-    // if (this.$store.state.tickets.ticket.length === 0) {
     this.loadTickets(this.$route.params.code)
-    // }
   },
 }
 </script>

@@ -1,9 +1,11 @@
 <template>
   <div class="col-12">
-    <span>{{ ticket.passenger }}</span>
-    <span>{{ ticket.flight }}</span>
-    <span>{{ ticket.gate }}</span>
-    <span>{{ ticket.seat }}</span>
+    <NuxtLink class="giant-button" :to="`/tickets/boarding/${ticket.number}`">
+      <span>{{ ticket.passenger }}</span>
+      <span>{{ ticket.flight }}</span>
+      <span>{{ ticket.gate }}</span>
+      <span>{{ ticket.seat }}</span>
+    </NuxtLink>
   </div>
 </template>
 

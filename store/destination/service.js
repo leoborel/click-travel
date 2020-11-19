@@ -19,10 +19,12 @@ export default {
       api
         .get('destinations', {
           params: {
-            offset: '',
-            limit: 100,
-            skip: 0,
-            where: { isDreamDestination: true },
+            filter: {
+              offset: 0,
+              limit: 100,
+              skip: 0,
+              where: { isDreamDestination: true },
+            },
           },
         })
         .then((response) => {
